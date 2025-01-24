@@ -1,0 +1,19 @@
+{
+    "name": "Koksmat",
+    "postCreateCommand": "go install github.com/koksmat-com/koksmat@v2.0.0.11",
+    "containerEnv": {
+        "KITCHENROOT": "/workspaces"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/powershell:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "golang.go",
+                "ms-vscode.powershell",
+                "esbenp.prettier-vscode"
+            ]
+        }
+    }
+}

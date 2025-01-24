@@ -1,0 +1,72 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Install App Dependencies",
+			"command": "pwsh",
+			
+			"args": [
+				"-F","10-install-appdependencies.ps1"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/10-setup"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"type": "shell",
+			"label": "Install Web Dependencies",
+			"command": "pwsh",
+			"args": [
+				"-F","10-install-webdependencies.ps1"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/10-setup"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"type": "shell",
+			"label": "Bump version",
+			"command": "koksmat-release",
+			"args": [
+				"bump",
+				"patch",
+				"."
+
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"type": "shell",
+			"label": "Release GitHub",
+			"command": "koksmat-release",
+			"args": [
+				"release",
+				"github",
+				"."
+
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},		
+	]
+}

@@ -1,0 +1,18 @@
+{
+  "version": {
+    "minor": 0,
+    "build": 1,
+    "patch": 1,
+    "major": 0
+  },
+  "appname": "test",
+  "description": "test",
+  "dnsprod" : "api.com",
+  "dnstest": "test.api.com",
+  
+  "imagename": "ghcr.io/nexi-intra/test",
+
+  "port": 3000
+  
+
+}
